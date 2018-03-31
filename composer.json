@@ -1,0 +1,14 @@
+{
+  "name": "solarwinds/solarwinds-soap",
+  "description": " ",
+  "license": "GPL",
+  "keywords": [
+    "solarwinds",
+    "soap"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Solarwinds\\Soap\\": "src/"
+    }
+  }
+}
