@@ -1,7 +1,7 @@
 {
   "name": "singularo/solarwinds-soap",
   "description": " ",
-  "license": "GPL",
+  "license": "GPL-2.0-only",
   "keywords": [
     "solarwinds",
     "soap"
