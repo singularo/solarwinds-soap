@@ -10,8 +10,13 @@ use Solarwinds\Soap\tKeyPair;
 
 if (isset($argv[1])) {
     // Retrieve specific customer.
-    $issueFilter = new tKeyPair('customerID', $argv[1]);
-    $activeIssues = new activeIssuesList($user, $pass, $issueFilter);
+    $issueFilters[] = new tKeyPair('customerID', $argv[1]);
+    $issueFilters[] = new tKeyPair('NOC_View_Status_Filter', 'normal');
+    $issueFilters[] = new tKeyPair('NOC_View_Status_Filter', 'warning');
+    $issueFilters[] = new tKeyPair('NOC_View_Status_Filter', 'failed');
+
+
+    $activeIssues = new activeIssuesList($user, $pass, $issueFilters);
     print "Retrieving active issues for $argv[1]\n";
 }
 else {
@@ -42,4 +47,3 @@ asort($issues_output);
 foreach ($issues_output as $value) {
     print $value['activeissue.customerid'] . ':' . $value['activeissue.devicename'] . ':' . $value['activeissue.servicename'] . "\n";
 }
-

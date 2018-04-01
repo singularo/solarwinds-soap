@@ -16,7 +16,7 @@ class tKeyPair
     protected $value = null;
 
     
-    public function __construct(string $key, string $value)
+    public function __construct(string $key, $value)
     {
         $this->key = $key;
         $this->value = $value;
@@ -34,7 +34,7 @@ class tKeyPair
      * @param string $key
      * @return \Solarwinds\Soap\tKeyPair
      */
-    public function setKey($key)
+    public function setKey(string $key)
     {
       $this->key = $key;
       return $this;
@@ -58,4 +58,15 @@ class tKeyPair
       return $this;
     }
 
+    /**
+     * @param string $key
+     * @param string $value
+     * @return \Solarwinds\Soap\tKeyPair
+     */
+    public function setKeyValue(string $key, $value)
+    {
+        $this->key = $key;
+        $this->value = $value;
+        return $this;
+    }
 }
