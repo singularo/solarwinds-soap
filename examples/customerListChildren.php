@@ -1,18 +1,24 @@
 <?php
 /**
- * Simple test script to retrieve all customers.
+ * Simple test script to retrieve children of a specific customer.
  */
 
 require_once __DIR__ . '/config.php';
 
-use Solarwinds\Soap\customerList;
+use Solarwinds\Soap\customerListChildren;
 use Solarwinds\Soap\tKeyPair;
 
-// Setup to retrieve all customers.
-$customerList = new customerList($user, $pass, new tKeyPair('', ''));
+if (isset($argv[1])) {
+    // Retrieve specific customer.
+    $customer_list = new customerListChildren($user, $pass, new tKeyPair('customerID', $argv[1]));
+    print "Retrieving customers for $argv[1]\n";
+}
+else {
+    exit("Please pass customer id on command line.\n");
+}
 
 // Actually call the api and get the results.
-$result = $client->customerList($customerList);
+$result = $client->customerListChildren($customer_list);
 $found_customers = $result->getReturn();
 
 // Now loop through the responses and build up and array of information

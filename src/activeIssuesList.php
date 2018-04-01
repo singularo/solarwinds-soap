@@ -21,9 +21,11 @@ class activeIssuesList
     protected $settings = null;
 
     
-    public function __construct()
+    public function __construct(string $username = NULL, string $password = NULL, tKeyPair $settings = NULL)
     {
-    
+        $this->username = $username;
+        $this->password = $password;
+        $this->settings = $settings;
     }
 
     /**
