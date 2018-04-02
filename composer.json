@@ -1,11 +1,12 @@
 {
   "name": "singularo/solarwinds-soap",
-  "description": " ",
+  "description": "PHP implementation of the Solarwinds SOAP API to access n-central servers.",
   "license": "GPL-2.0-only",
   "keywords": [
     "solarwinds",
     "soap"
   ],
+  "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
       "Solarwinds\\Soap\\": "src/"

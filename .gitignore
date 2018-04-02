@@ -1,4 +1,2 @@
 .idea
-examples/composer.lock
-examples/vendor
-examples/config.php
+vendor

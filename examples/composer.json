@@ -1,9 +1,0 @@
-{
-    "name": "username/project",
-    "type": "project",
-    "license": "GPL",
-    "minimum-stability": "dev",
-    "require": {
-        "singularo/solarwinds-soap": "dev-master"
-    }
-}
