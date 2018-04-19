@@ -21,9 +21,11 @@ class deviceList
     protected $settings = null;
 
     
-    public function __construct()
+    public function __construct($username, $password, $settings)
     {
-    
+        $this->username = $username;
+        $this->password = $password;
+        $this->settings = $settings;
     }
 
     /**

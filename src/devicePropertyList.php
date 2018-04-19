@@ -43,9 +43,15 @@ class devicePropertyList
     /**
      * @param boolean $reverseOrder
      */
-    public function __construct($reverseOrder)
+    public function __construct($username, $password, $deviceIDs, $deviceNames = NULL, $filterIDs = NULL, $filterNames = NULL, $reverseOrder = FALSE)
     {
-      $this->reverseOrder = $reverseOrder;
+        $this->username =     $username;
+        $this->password =     $password;
+        $this->deviceIDs =    $deviceIDs;
+        $this->deviceNames =  $deviceNames;
+        $this->filterIDs =    $filterIDs;
+        $this->filterNames =  $filterNames;
+        $this->reverseOrder = $reverseOrder;
     }
 
     /**

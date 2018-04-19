@@ -19,9 +19,20 @@ class customer
     /**
      * @return tKeyPair[]
      */
-    public function getInfo()
+    public function getInfo($key = NULL)
     {
-      return $this->info;
+        if (!isset($key)) {
+            return $this->info;
+        }
+        else {
+            if (is_array($this->info)) {
+                foreach ($this->info as $info) {
+                    if ($info->getKey() == $key) {
+                        return $info->getValue();
+                    }
+                }
+            }
+        }
     }
 
     /**

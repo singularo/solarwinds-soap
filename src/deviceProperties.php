@@ -70,9 +70,20 @@ class deviceProperties
     /**
      * @return deviceProperty[]
      */
-    public function getProperties()
+    public function getProperties($key = NULL)
     {
-      return $this->properties;
+        if (!isset($key)) {
+            return $this->properties;
+        }
+        else {
+            if (is_array($this->properties)) {
+                foreach ($this->properties as $info) {
+                    if ($info->getLabel() == $key) {
+                        return $info->getValue();
+                    }
+                }
+            }
+        }
     }
 
     /**
